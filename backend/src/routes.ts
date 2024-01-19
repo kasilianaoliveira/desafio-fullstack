@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express";
-import { ListSchoolsController } from "./controllers/listSchoolsController";
-import { DetailSchoolController } from "./controllers/detailsSchoolController";
+import { ListSchoolsController } from "./controllers/ListSchoolsController";
+import { DetailSchoolController } from "./controllers/DetailsSchoolController";
 
 export const router = Router();
 
