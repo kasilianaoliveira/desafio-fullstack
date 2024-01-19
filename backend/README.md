@@ -1,0 +1,4 @@
+- Primeiro add ts: yarn add typescript -D
+- yarn add express e yarn add @types/express -D
+- yarn tsc --init para iniciar o typescript
+-yarn add ts-node-dev -D 
