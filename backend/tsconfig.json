@@ -9,9 +9,8 @@
  
     "outDir": "./dist",                                   
     "esModuleInterop": true,                             
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
-
+    "forceConsistentCasingInFileNames": true,       
     "strict": false,                                      
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true                                
   }
 }
