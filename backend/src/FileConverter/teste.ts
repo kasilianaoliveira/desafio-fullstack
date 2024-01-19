@@ -1,6 +1,6 @@
 import { convertCsvToJson, CsvRow } from './csvToJsonConverter';
 
-const caminhoCsv = 'src/docConverter/INSE_ESC_2021.csv';
+const caminhoCsv = 'src/FileConverter/INSE_ESC_2021.csv';
 
 convertCsvToJson(caminhoCsv)
   .then((jsonData: CsvRow[]) => {
