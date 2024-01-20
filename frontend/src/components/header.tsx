@@ -1,8 +1,8 @@
 import { Separator } from '@radix-ui/react-separator'
 import { FileSpreadsheet, Home, LibraryBig } from 'lucide-react'
 
-import { ThemeToggle } from '../theme/theme-toggle'
 import { NavLink } from './nav-link'
+import { ThemeToggle } from './theme/theme-toggle'
 export const Header = () => {
   return (
     <div className="border-b">

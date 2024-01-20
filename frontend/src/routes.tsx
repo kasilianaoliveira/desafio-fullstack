@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'inse/resultados',
-        element: <Dashboard />,
+        element: <Schools />,
       },
     ],
   },
