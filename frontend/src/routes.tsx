@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { AppLayout } from './pages/_layouts/app'
 import { Dashboard } from './pages/app/dashboard'
+import { Schools } from './pages/app/schools/schools'
 
 export const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
+        element: <Dashboard />,
+      },
+      {
+        path: 'inse/resultados',
         element: <Dashboard />,
       },
     ],
