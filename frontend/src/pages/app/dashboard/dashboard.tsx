@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { CardAverange } from './card-average'
 import { CardClassification } from './card-classification'
 import { CardStudentTotal } from './card-student-total'
+import { RevenueChart } from './revenue-chart'
 
 export const Dashboard = () => {
   return (
@@ -15,6 +16,9 @@ export const Dashboard = () => {
           <CardAverange />
           <CardStudentTotal />
           <CardClassification />
+        </div>
+        <div className=" mt-6 grid grid-cols-9 gap-4">
+          <RevenueChart />
         </div>
       </div>
     </>
