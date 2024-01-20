@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ListSchoolsService } from "../services/listSchoolsService";
+import { ListSchoolsService } from "../services/ListSchoolsService";
 import { SeachParams } from "../types/SearchParams";
 
 
@@ -12,7 +12,6 @@ export class ListSchoolsController {
       const listSchoolsService = new ListSchoolsService();
 
       const schools = await listSchoolsService.execute({search, uf, city, take, skip});
-      console.log(search)
       return res.json(schools);
 
     } catch (error) {

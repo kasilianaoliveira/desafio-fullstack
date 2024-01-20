@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DetailsSchoolService } from "../services/detailsSchoolService";
+import { DetailsSchoolService } from "../services/DetailsSchoolService";
 
 
 export class DetailSchoolController {
