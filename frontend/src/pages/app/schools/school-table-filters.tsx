@@ -1,8 +1,9 @@
 import { Search, X } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { Combobox } from '@/components/ui/combobox'
 import { Input } from '@/components/ui/input'
+
+import { Combobox } from './combobox'
 
 export const SchoolTableFilters = () => {
   return (
