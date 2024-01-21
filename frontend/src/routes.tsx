@@ -5,12 +5,13 @@ import { NotFound } from './pages/404'
 import { Dashboard } from './pages/app/dashboard/dashboard'
 import { Home } from './pages/app/home/home'
 import { Schools } from './pages/app/schools/schools'
+import { Error } from './pages/error'
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
-    errorElement: <NotFound />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
@@ -25,5 +26,9 @@ export const router = createBrowserRouter([
         element: <Schools />,
       },
     ],
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ])

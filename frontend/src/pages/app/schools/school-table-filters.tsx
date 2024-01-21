@@ -43,14 +43,15 @@ export const SchoolTableFilters = ({ cities, ufs }: tableFiltersProps) => {
   const city = searchParams.get('city')
   const uf = searchParams.get('uf')
 
-  const { register, handleSubmit, control } = useForm<SchoolFiltersSchema>({
-    resolver: zodResolver(schoolFilterSchema),
-    defaultValues: {
-      search: search ?? '',
-      city: city ?? '',
-      uf: uf ?? '',
-    },
-  })
+  const { register, handleSubmit, control, reset } =
+    useForm<SchoolFiltersSchema>({
+      resolver: zodResolver(schoolFilterSchema),
+      defaultValues: {
+        search: search ?? '',
+        city: city ?? '',
+        uf: uf ?? '',
+      },
+    })
 
   function handleFilter({ city, search, uf }: SchoolFiltersSchema) {
     setSearchParams((state) => {
@@ -77,6 +78,27 @@ export const SchoolTableFilters = ({ cities, ufs }: tableFiltersProps) => {
     })
   }
 
+  function handleClearFilters() {
+    setSearchParams((state) => {
+      state.delete('schoolId')
+      state.delete('search')
+      state.delete('city')
+      state.delete('uf')
+      state.set('page', '1')
+
+      return state
+    })
+
+    reset({
+      schoolId: '',
+      search: '',
+      city: '',
+      uf: '',
+    })
+  }
+  function capitalizeFirstLetter(str: string) {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
   return (
     <form
       onSubmit={handleSubmit(handleFilter)}
@@ -107,9 +129,7 @@ export const SchoolTableFilters = ({ cities, ufs }: tableFiltersProps) => {
                   className="h-8 w-[200px] justify-between max-sm:w-full"
                 >
                   {value
-                    ? ufs?.find(
-                        (uf) => uf.toUpperCase() === value.toUpperCase(),
-                      )
+                    ? capitalizeFirstLetter(value)
                     : 'Selecione seu estado'}
                   <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                 </Button>
@@ -156,6 +176,7 @@ export const SchoolTableFilters = ({ cities, ufs }: tableFiltersProps) => {
         variant="outline"
         size="xs"
         className="max-sm:w-full"
+        onClick={handleClearFilters}
       >
         <X className="mr-2 h-4 w-4" />
         Remover filtros

@@ -15,6 +15,7 @@ import {
 
 import { SchoolTableFilters } from './school-table-filters'
 import { SchoolTableRow } from './school-table-row'
+import { SchoolTableSkeleton } from './school-table-skeleton'
 
 export const Schools = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -78,7 +79,7 @@ export const Schools = () => {
               </TableBody>
             </Table>
           </div>
-          {isLoading && <p>Carregando...</p>}
+          {isLoading && <SchoolTableSkeleton />}
           <PaginationTable
             pageIndex={pageIndex}
             totalCount={result ? result.totalItems : 0}

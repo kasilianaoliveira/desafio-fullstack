@@ -17,7 +17,7 @@ export const SchoolTableRow = (props: SchoolProps) => {
           <DialogTrigger asChild>
             <Button variant="outline" size="xs">
               <Search className="h-3 w-3" />
-              <span className="sr-only">Detalhes do pedido</span>
+              <span className="sr-only">Detalhes da escola</span>
             </Button>
           </DialogTrigger>
           <SchoolDetails
