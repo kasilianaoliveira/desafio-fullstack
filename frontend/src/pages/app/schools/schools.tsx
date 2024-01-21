@@ -33,13 +33,9 @@ export const Schools = () => {
     isLoading,
     isError,
   } = useQuery({
-    queryKey: ['schools', pageIndex],
+    queryKey: ['schools', pageIndex, search, city, uf],
     queryFn: () => getSchools({ pageIndex, city, search, uf }),
   })
-
-  if (isLoading) {
-    return <p>Carregando...</p>
-  }
 
   if (isError) {
     return <p>Erro ao buscar escolas.</p>
@@ -82,6 +78,7 @@ export const Schools = () => {
               </TableBody>
             </Table>
           </div>
+          {isLoading && <p>Carregando...</p>}
           <PaginationTable
             pageIndex={pageIndex}
             totalCount={result ? result.totalItems : 0}

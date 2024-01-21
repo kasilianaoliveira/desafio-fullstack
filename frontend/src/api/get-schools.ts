@@ -32,8 +32,8 @@ export interface GetSchool {
     pc_nivel_8: number
   }[]
   totalItems: number
-  city?: string[]
-  estado?: string[]
+  cities?: string[]
+  ufs?: string[]
 }
 export async function getSchools({
   pageIndex,

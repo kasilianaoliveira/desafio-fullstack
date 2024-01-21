@@ -17,36 +17,6 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 
-const data = [
-  {
-    uf: 'CE',
-    value: 1200,
-  },
-  {
-    uf: 'DF',
-    value: 1200,
-  },
-  {
-    uf: 'AM',
-    value: 1200,
-  },
-  {
-    uf: 'RN',
-    value: 1200,
-  },
-  {
-    uf: 'RJ',
-    value: 1200,
-  },
-  {
-    uf: 'SP',
-    value: 3000,
-  },
-  {
-    uf: 'MG',
-    value: 900,
-  },
-]
 interface props {
   schools: {
     sg_uf: string
@@ -54,8 +24,6 @@ interface props {
   }[]
 }
 export const RevenueChart = ({ schools }: props) => {
-  console.log(schools)
-
   return (
     <Card className="col-span-9">
       <CardHeader className="flex-row items-center justify-between pb-8">
@@ -90,7 +58,7 @@ export const RevenueChart = ({ schools }: props) => {
               padding={{ left: 20, right: 10 }}
             />
             <YAxis />
-            <Tooltip />
+            <Tooltip contentStyle={{ color: '#000' }} />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar
               dataKey="value"

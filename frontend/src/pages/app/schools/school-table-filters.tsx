@@ -22,6 +22,7 @@ export const SchoolTableFilters = () => {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const search = searchParams.get('search')
+
   const city = searchParams.get('city')
   const uf = searchParams.get('uf')
 
@@ -41,7 +42,6 @@ export const SchoolTableFilters = () => {
       } else {
         state.delete('search')
       }
-
       if (city) {
         state.set('city', city)
       } else {
@@ -97,7 +97,6 @@ export const SchoolTableFilters = () => {
               disabled={disabled}
               onChange={onChange}
               name={name}
-              // cities={scho}
               title="Selecione sua Cidade"
               subtitle="Pesquise seu cidade..."
             />

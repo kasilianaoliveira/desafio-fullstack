@@ -17,25 +17,28 @@ export const Dashboard = () => {
     queryKey: ['schools'],
     queryFn: () => getSchoolsDashboard(),
   })
-  console.log(result?.totalStudents._sum.qtd_alunos_inse)
   return (
     <>
       <Helmet title="Dashboard" />
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold tracking-tighter">Dashboard</h1>
 
-        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
-          <CardAverange avg={result && result?.roundedAverage} />
-          <CardStudentTotal
-            total={result && result?.totalStudents._sum.qtd_alunos_inse}
-          />
-          <CardClassification
-            classification={result && result?.mostFrequentClassification}
-          />
-        </div>
-        <div className=" mt-6 grid grid-cols-9 gap-4">
-          <RevenueChart schools={result!.schools} />
-        </div>
+        {result && (
+          <>
+            <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
+              <CardAverange avg={result && result?.roundedAverage} />
+              <CardStudentTotal
+                total={result && result?.totalStudents._sum.qtd_alunos_inse}
+              />
+              <CardClassification
+                classification={result && result?.mostFrequentClassification}
+              />
+            </div>
+            <div className=" mt-6 grid grid-cols-9 gap-4">
+              <RevenueChart schools={result!.schools} />
+            </div>
+          </>
+        )}
       </div>
     </>
   )
