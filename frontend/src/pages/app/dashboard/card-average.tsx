@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const CardAverange = ({ avg }: { avg: number | undefined }) => {
   return (
-    <Card>
+    <Card className="dark:border-gray-700 dark:bg-gray-900">
       <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-base font-semibold">
           Média geral (INSE)

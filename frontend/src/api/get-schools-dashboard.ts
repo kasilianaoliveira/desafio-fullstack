@@ -16,7 +16,6 @@ export interface GetSchoolResults {
 export async function getSchoolsDashboard() {
   try {
     const response = await api.get<GetSchoolResults>('/results')
-    console.log(response.data)
     return response.data
   } catch (error) {
     console.error('Erro ao buscar escolas:', error)
