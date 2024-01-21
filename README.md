@@ -28,9 +28,9 @@
 
 <h2 id="started">📌 About</h2>
 
-Simple description of what your project do or how to use it.
+Projeto desenvolvido para um desafio tecnico fullstack usando dados do INSE 2021, o backend foi hospedado no render (modo free), dessa forma demora alguns minutos para o site trazer as informações.
 
-[![project][PROJECT__BADGE]][PROJECT__URL]
+ - [Clique aqui para acessar o site](https://desafio-fullstack-seven.vercel.app/)
 
 <h2 id="started">🚀 Getting started</h2>
 
