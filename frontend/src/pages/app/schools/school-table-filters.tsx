@@ -29,12 +29,11 @@ const schoolFilterSchema = z.object({
 })
 
 interface tableFiltersProps {
-  cities?: string[]
   ufs?: string[]
 }
 type SchoolFiltersSchema = z.infer<typeof schoolFilterSchema>
 
-export const SchoolTableFilters = ({ cities, ufs }: tableFiltersProps) => {
+export const SchoolTableFilters = ({ ufs }: tableFiltersProps) => {
   const [searchParams, setSearchParams] = useSearchParams()
   const [open, setOpen] = React.useState(false)
 
@@ -118,7 +117,7 @@ export const SchoolTableFilters = ({ cities, ufs }: tableFiltersProps) => {
       <Controller
         name="uf"
         control={control}
-        render={({ field: { name, onChange, value, disabled } }) => {
+        render={({ field: { onChange, value } }) => {
           return (
             <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild>

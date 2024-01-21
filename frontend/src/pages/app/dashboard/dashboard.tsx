@@ -9,11 +9,7 @@ import { CardStudentTotal } from './card-student-total'
 import { RevenueChart } from './revenue-chart'
 
 export const Dashboard = () => {
-  const {
-    data: result,
-    isLoading,
-    isError,
-  } = useQuery({
+  const { data: result } = useQuery({
     queryKey: ['schools'],
     queryFn: () => getSchoolsDashboard(),
   })

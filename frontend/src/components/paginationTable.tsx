@@ -3,8 +3,6 @@ import { ChevronsLeft, ChevronsRight } from 'lucide-react'
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
