@@ -12,7 +12,6 @@ export interface GetSchoolResults {
       qtd_alunos_inse: number
     }
   }
-  estado?: string[]
 }
 export async function getSchoolsDashboard() {
   try {
