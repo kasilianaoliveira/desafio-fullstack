@@ -1,15 +1,21 @@
 import { prismaClient } from "../prisma";
 export class ResultListService {
 	async execute() {
-
 		try {
 			const schoolsByState = await prismaClient.school.groupBy({
-				by:["no_uf"],
+				by:["sg_uf"],
 				_count:{
 					no_uf:true
+				},
+				orderBy:{
+					sg_uf:'asc'
 				}
 			});
-
+			
+			const result= schoolsByState.map((entry) => ({
+        uf: entry.sg_uf,
+        value: entry._count?.no_uf || 0,
+      }));
 
 			const averageStudents = await prismaClient.school.aggregate({
 				_avg: {
@@ -31,7 +37,7 @@ export class ResultListService {
 			mostFrequentClassifications.sort((a, b) => b._count - a._count);
 
 			const mostFrequentClassification = mostFrequentClassifications[0]?.inse_classificacao;
-			return { schools:  schoolsByState, roundedAverage, totalStudents, mostFrequentClassification };
+			return { schools:  result, roundedAverage, totalStudents, mostFrequentClassification };
 
 		} catch (error) {
 			throw new Error('Error when searching for schools.');
