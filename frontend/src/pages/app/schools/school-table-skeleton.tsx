@@ -15,16 +15,16 @@ export function SchoolTableSkeleton() {
           </Button>
         </TableCell>
         <TableCell>
-          <Skeleton className="h-4 w-[172px]" />
+          <Skeleton className="h-4 w-[172px]  max-sm:w-[50px]" />
         </TableCell>
         <TableCell>
-          <Skeleton className="h-4 w-[148px]" />
+          <Skeleton className="h-4 w-[600px] max-lg:w-[300px] max-sm:w-[50px]" />
         </TableCell>
         <TableCell>
-          <Skeleton className="h-4 w-[110px]" />
+          <Skeleton className="h-4 w-[110px] max-sm:w-[50px]" />
         </TableCell>
         <TableCell>
-          <Skeleton className="h-4 w-[110px]" />
+          <Skeleton className="h-4 w-[110px] max-sm:w-[50px]" />
         </TableCell>
       </TableRow>
     )
