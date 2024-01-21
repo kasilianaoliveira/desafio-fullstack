@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { describe, expect, it, jest } from "@jest/globals"
 import { DetailSchoolController } from "../DetailsSchoolController";
 import { DetailsSchoolService } from "../../services/DetailsSchoolService";
-jest.mock("../../services/detailsSchoolService");
+jest.mock("../../services/DetailsSchoolService");
 
 describe("DetailSchoolController", () => {
   it("should handle school details retrieval successfully", async () => {
@@ -44,6 +44,7 @@ describe("DetailSchoolController", () => {
 
     await controller.handle(req, res);
     expect(res.status).toHaveBeenCalledWith(200);
+
     expect(res.json).toHaveBeenCalledWith({
       ID_ESCOLA: 12027855,
       NU_ANO_SAEB: 2021,

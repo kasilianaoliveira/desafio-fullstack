@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { SeachParams } from "../types/SearchParams";
 import { ResultListService } from "../services/ResultListService";
 
 

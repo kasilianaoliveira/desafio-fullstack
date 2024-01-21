@@ -12,12 +12,10 @@ export class ListSchoolsController {
       const listSchoolsService = new ListSchoolsService();
 
       const schools = await listSchoolsService.execute({ search, uf, city, pageIndex });
-      return res.json(schools);
+      return res.status(200).json(schools);
 
     } catch (error) {
-      if (error instanceof Error) {
-        return res.status(500).json({ error: error.message });
-      }
+      return res.status(400).json({ error: error.message });
     }
   }
 }
