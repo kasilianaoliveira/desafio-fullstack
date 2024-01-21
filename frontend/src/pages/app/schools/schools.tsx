@@ -57,7 +57,7 @@ export const Schools = () => {
         </h1>
 
         <div className="space-y-2.5">
-          <SchoolTableFilters cities={result?.cities} ufs={result?.ufs} />
+          <SchoolTableFilters ufs={result?.ufs} />
           <div className="rounded-md border">
             <Table>
               <TableHeader>
