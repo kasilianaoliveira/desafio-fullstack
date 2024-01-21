@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { describe, expect, it, jest } from "@jest/globals"
 import { DetailSchoolController } from "../DetailsSchoolController";
-import { DetailsSchoolService } from "../../services/detailsSchoolService";
+import { DetailsSchoolService } from "../../services/DetailsSchoolService";
 jest.mock("../../services/detailsSchoolService");
 
 describe("DetailSchoolController", () => {

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { describe, expect, it, jest } from "@jest/globals"
-import { DeleteSchoolService } from "../../services/deleteSchoolService";
 import { DeleteSchoolController } from "../DeleteSchoolController";
+import { DeleteSchoolService } from "../../services/DeleteSchoolService";
 jest.mock("../../services/deleteSchoolService");
 
 describe("DeleteSchoolController", () => {
