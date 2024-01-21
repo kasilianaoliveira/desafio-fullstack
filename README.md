@@ -1,6 +1,8 @@
 [JAVASCRIPT__BADGE]: https://img.shields.io/badge/Javascript-000?style=for-the-badge&logo=javascript
 [TYPESCRIPT__BADGE]: https://img.shields.io/badge/typescript-D4FAFF?style=for-the-badge&logo=typescript
 [REACT__BADGE]: https://img.shields.io/badge/React-005CFE?style=for-the-badge&logo=react
+[EXPRESS__BADGE]: https://img.shields.io/badge/express-005CFE?style=for-the-badge&logo=express
+
 [PROJECT__BADGE]: './assets/dashboard.png'
 [PROJECT__URL]: https://desafio-fullstack-seven.vercel.app
 
@@ -9,6 +11,7 @@
 ![react][REACT__BADGE]
 ![typescript][TYPESCRIPT__BADGE]
 ![javascript][JAVASCRIPT__BADGE]
+![express][EXPRESS__BADGE]
 
 <p align="center">
  <a href="#about">About</a> • 
@@ -70,3 +73,21 @@ Here you can list the main routes of your API, and what are their expected reque
 | <kbd>/dashboard</kbd>     | Dashboard contendo alguns dados e gráfico
 | <kbd>/inse/resultados</kbd>    | Página contendo a tabela com todos os dados
 
+<h3>Tecnologias utilizadas</h3>
+FRONTEND
+    * React
+    * Typescript
+    * Tailwindcss
+    * React-hook-form
+    * Shadcn
+    * React Query
+    * React router Dom
+    * Vite
+    * Lucide icons
+BACKEND
+    *Node
+    *Express
+    * Docker compose
+    * Prisma
+    * Postgresql
+    * Jest 
