@@ -3,10 +3,9 @@
 [EXPRESS__BADGE]: https://img.shields.io/badge/express-005CFE?style=for-the-badge&logo=express
 
 
-<h1 align="center" style="font-weight: bold;">Project name 💻</h1>
+<h1 align="center" style="font-weight: bold;">Desafio fullstack 💻</h1>
 
 ![express][EXPRESS__BADGE]
-![nest][NEST__BADGE]
 ![typescript][TYPESCRIPT__BADGE]
 ![javascript][JAVASCRIPT__BADGE]
 
@@ -71,7 +70,7 @@ Here you can list the main routes of your API, and what are their expected reque
 | <kbd>DELETE /deleteSchool/:id</kbd>   | Deleta uma escola por ID
 | <kbd>POST /school</kbd>   | Cadastra uma escola
 
-<h3 id="get-auth-detail">GET /authenticate</h3>
+<h3 id="get-auth-detail">GET /search</h3>
 
 **RESPONSE**
 ```json
