@@ -1,5 +1,7 @@
 import { Separator } from '@radix-ui/react-separator'
+import { useQuery } from '@tanstack/react-query'
 
+import { getSchoolDetail } from '@/api/get-school-detail'
 import { TableDetails } from '@/components/table-details'
 import {
   DialogContent,
@@ -8,11 +10,25 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 
-export const SchoolDetails = () => {
+export interface SchoolDetailProps {
+  schoolId: number
+  open: boolean
+}
+export const SchoolDetails = ({ schoolId, open }: SchoolDetailProps) => {
+  const { data: detail } = useQuery({
+    queryKey: ['school', schoolId],
+    queryFn: () => getSchoolDetail({ schoolId }),
+    enabled: open,
+  })
+
+  console.log(detail?.no_escola)
+  if (!detail) {
+    return null
+  }
   return (
     <DialogContent>
       <DialogHeader>
-        <DialogTitle>Escola - EEEP DR JOSÉ ALVES DA SILVEIRA</DialogTitle>
+        <DialogTitle>Escola - {detail?.no_escola}</DialogTitle>
         <DialogDescription>Detalhes da escola</DialogDescription>
       </DialogHeader>
 
@@ -24,14 +40,22 @@ export const SchoolDetails = () => {
             className="my-4 h-1 rounded-sm bg-teal-500"
           />
           <div className="flex flex-col gap-2">
-            <TableDetails title="Ano SAEB" value="2021" />
-            <TableDetails title="Tipo de rede" value="2021" />
-            <TableDetails title="Tipo de localização" value="2021" />
-            <TableDetails title="Tipo de capital " value="2021" />
-            <TableDetails title="Quantidade de alunos (INSE)" value="2021" />
-            <TableDetails title="Média (INSE)" value="2021" />
-            <TableDetails title="Classificação (INSE)" value="2021" />
-            <TableDetails title="Ano SAEB" value="2021" />
+            <TableDetails title="Ano SAEB" value={detail?.nu_ano_saeb} />
+            <TableDetails title="Tipo de rede" value={detail.tp_tipo_rede} />
+            <TableDetails
+              title="Tipo de localização"
+              value={detail.tp_localizacao}
+            />
+            <TableDetails title="Tipo de capital " value={detail.tp_capital} />
+            <TableDetails
+              title="Quantidade de alunos (INSE)"
+              value={detail.qtd_alunos_inse}
+            />
+            <TableDetails title="Média (INSE)" value={detail.media_inse} />
+            <TableDetails
+              title="Classificação (INSE)"
+              value={detail.inse_classificacao}
+            />
           </div>
         </div>
 
@@ -42,14 +66,38 @@ export const SchoolDetails = () => {
             className="my-4 h-1 rounded-sm bg-teal-500"
           />
           <div className="flex flex-col gap-2">
-            <TableDetails title="Percentual nivel 1" value="1.29" />
-            <TableDetails title="Percentual nivel 2" value="1.29" />
-            <TableDetails title="Percentual nivel 3" value="1.29" />
-            <TableDetails title="Percentual nivel 4" value="1.29" />
-            <TableDetails title="Percentual nivel 5" value="1.29" />
-            <TableDetails title="Percentual nivel 6" value="1.29" />
-            <TableDetails title="Percentual nivel 7" value="1.29" />
-            <TableDetails title="Percentual nivel 8" value="1.29" />
+            <TableDetails
+              title="Percentual nivel 1"
+              value={detail.pc_nivel_1}
+            />
+            <TableDetails
+              title="Percentual nivel 2"
+              value={detail.pc_nivel_2}
+            />
+            <TableDetails
+              title="Percentual nivel 3"
+              value={detail.pc_nivel_3}
+            />
+            <TableDetails
+              title="Percentual nivel 4"
+              value={detail.pc_nivel_4}
+            />
+            <TableDetails
+              title="Percentual nivel 5"
+              value={detail.pc_nivel_5}
+            />
+            <TableDetails
+              title="Percentual nivel 6"
+              value={detail.pc_nivel_6}
+            />
+            <TableDetails
+              title="Percentual nivel 7"
+              value={detail.pc_nivel_7}
+            />
+            <TableDetails
+              title="Percentual nivel 8"
+              value={detail.pc_nivel_8}
+            />
           </div>
         </div>
       </div>

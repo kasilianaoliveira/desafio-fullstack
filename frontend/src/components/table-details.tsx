@@ -1,6 +1,6 @@
 export interface TableDetailsProps {
   title: string
-  value: string
+  value: number | string
 }
 export const TableDetails = ({ title, value }: TableDetailsProps) => {
   return (

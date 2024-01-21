@@ -1,4 +1,5 @@
 import { Search } from 'lucide-react'
+import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogTrigger } from '@/components/ui/dialog'
@@ -8,17 +9,21 @@ import { SchoolDetails } from './school-details'
 import { SchoolProps } from './SchoolType'
 
 export const SchoolTableRow = (props: SchoolProps) => {
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false)
   return (
     <TableRow>
       <TableCell>
-        <Dialog>
+        <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
           <DialogTrigger asChild>
             <Button variant="outline" size="xs">
               <Search className="h-3 w-3" />
               <span className="sr-only">Detalhes do pedido</span>
             </Button>
           </DialogTrigger>
-          <SchoolDetails />
+          <SchoolDetails
+            schoolId={props.school.id_escola}
+            open={isDetailsOpen}
+          />
         </Dialog>
       </TableCell>
       <TableCell className="font-mono text-sm font-medium">
