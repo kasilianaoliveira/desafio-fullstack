@@ -73,21 +73,24 @@ Here you can list the main routes of your API, and what are their expected reque
 | <kbd>/dashboard</kbd>     | Dashboard contendo alguns dados e gráfico
 | <kbd>/inse/resultados</kbd>    | Página contendo a tabela com todos os dados
 
-<h3>Tecnologias utilizadas</h3>
-FRONTEND
-    * React
-    * Typescript
-    * Tailwindcss
-    * React-hook-form
-    * Shadcn
-    * React Query
-    * React router Dom
-    * Vite
-    * Lucide icons
-BACKEND
-    *Node
-    *Express
-    * Docker compose
-    * Prisma
-    * Postgresql
-    * Jest 
+
+## Tecnologias usadas
+
+- FRONTEND
+   - React
+   - Typescript
+   - Tailwindcss
+   - React-hook-form
+   - Shadcn
+   - React Query
+   - React router Dom
+   - Vite
+   - Lucide icons
+
+- BACKEND
+    - Node
+    - Express
+    - Docker compose
+    - Prisma
+    - Postgresql
+    - Jest 
