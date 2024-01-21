@@ -1,8 +1,7 @@
 import { convertCsvToJson } from "../src/FileConverter/csvToJsonConverter";
 import { prismaClient } from "../src/prisma";
 import { CsvRow } from "../src/types/CsvRow";
-
-const caminhoCsv = '/home/kasiliana/dev/desafio/backend/src/FileConverter/INSE_ESC_2021.csv';
+const caminhoCsv = 'src/FileConverter/INSE_ESC_2021.csv';
 
 convertCsvToJson(caminhoCsv)
   .then(async (jsondataSchool: CsvRow[]) => {

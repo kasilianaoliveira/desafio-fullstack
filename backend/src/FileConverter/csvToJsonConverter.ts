@@ -1,8 +1,6 @@
 import csvtojson from 'csvtojson';
 import { CsvRow } from '../types/CsvRow';
 
-
-
 export async function convertCsvToJson(csvFilePath: string): Promise<CsvRow[]> {
   const csvConverter = csvtojson({
     colParser: {
