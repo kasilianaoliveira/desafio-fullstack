@@ -38,9 +38,11 @@ const frameworks = [
     label: 'Astro',
   },
 ]
-interface ComboboxProps {
+interface ComboboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   title: string
   subtitle: string
+  cities?: string[]
+  ufs?: string[]
 }
 
 export function Combobox(props: ComboboxProps) {
@@ -56,7 +58,7 @@ export function Combobox(props: ComboboxProps) {
           aria-expanded={open}
           className="h-8 w-[200px] justify-between max-sm:w-full"
         >
-          {value
+          {props.value
             ? frameworks.find((framework) => framework.value === value)?.label
             : props.title}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -67,24 +69,44 @@ export function Combobox(props: ComboboxProps) {
           <CommandInput placeholder={props.subtitle} />
           <CommandEmpty>No framework found.</CommandEmpty>
           <CommandGroup>
-            {frameworks.map((framework) => (
-              <CommandItem
-                key={framework.value}
-                value={framework.value}
-                onSelect={(currentValue) => {
-                  setValue(currentValue === value ? '' : currentValue)
-                  setOpen(false)
-                }}
-              >
-                <Check
-                  className={cn(
-                    'mr-2 h-4 w-4',
-                    value === framework.value ? 'opacity-100' : 'opacity-0',
-                  )}
-                />
-                {framework.label}
-              </CommandItem>
-            ))}
+            {props.ufs &&
+              props.ufs.map((uf) => (
+                <CommandItem
+                  key={uf}
+                  value={uf}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? '' : currentValue)
+                    setOpen(false)
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      'mr-2 h-4 w-4',
+                      value === uf ? 'opacity-100' : 'opacity-0',
+                    )}
+                  />
+                  {uf}
+                </CommandItem>
+              ))}
+            {props.cities &&
+              props.cities.map((city) => (
+                <CommandItem
+                  key={city}
+                  value={city}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? '' : currentValue)
+                    setOpen(false)
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      'mr-2 h-4 w-4',
+                      value === city ? 'opacity-100' : 'opacity-0',
+                    )}
+                  />
+                  {city}
+                </CommandItem>
+              ))}
           </CommandGroup>
         </Command>
       </PopoverContent>

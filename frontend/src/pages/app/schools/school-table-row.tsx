@@ -1,11 +1,13 @@
 import { Search } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { Dialog, DialogTrigger } from '@/components/ui/dialog'
 import { TableCell, TableRow } from '@/components/ui/table'
 
 import { SchoolDetails } from './school-details'
-export const SchoolTableRow = () => {
+import { SchoolProps } from './SchoolType'
+
+export const SchoolTableRow = (props: SchoolProps) => {
   return (
     <TableRow>
       <TableCell>
@@ -19,12 +21,12 @@ export const SchoolTableRow = () => {
           <SchoolDetails />
         </Dialog>
       </TableCell>
-      <TableCell className="font-mono text-sm font-medium">12344556</TableCell>
-      <TableCell className="font-medium">
-        EEEP DR JOSÉ ALVES DA SILVEIRA
+      <TableCell className="font-mono text-sm font-medium">
+        {props.school.id_escola}
       </TableCell>
-      <TableCell className="font-medium">Ceará</TableCell>
-      <TableCell className="font-medium">Quixeramobim</TableCell>
+      <TableCell className="font-medium">{props.school.no_escola}</TableCell>
+      <TableCell className="font-medium">{props.school.no_uf}</TableCell>
+      <TableCell className="font-medium">{props.school.no_municipio}</TableCell>
     </TableRow>
   )
 }

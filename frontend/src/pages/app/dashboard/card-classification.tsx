@@ -2,7 +2,11 @@ import { BarChart } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
-export const CardClassification = () => {
+export const CardClassification = ({
+  classification,
+}: {
+  classification: string | undefined
+}) => {
   return (
     <Card>
       <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
@@ -13,7 +17,7 @@ export const CardClassification = () => {
       </CardHeader>
       <CardContent className="space-y-1">
         <span className="text-2xl font-bold tracking-tighter text-teal-700 dark:text-teal-500">
-          Nível IV
+          {classification}
         </span>
       </CardContent>
     </Card>

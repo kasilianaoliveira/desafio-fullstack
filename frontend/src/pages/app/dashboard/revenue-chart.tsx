@@ -2,7 +2,6 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
-  Legend,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -48,7 +47,15 @@ const data = [
     value: 900,
   },
 ]
-export const RevenueChart = () => {
+interface props {
+  schools: {
+    sg_uf: string
+    value: number
+  }[]
+}
+export const RevenueChart = ({ schools }: props) => {
+  console.log(schools)
+
   return (
     <Card className="col-span-9">
       <CardHeader className="flex-row items-center justify-between pb-8">
@@ -67,7 +74,7 @@ export const RevenueChart = () => {
             width={500}
             height={300}
             style={{ fontSize: 12 }}
-            data={data}
+            data={schools}
             margin={{
               top: 5,
               right: 30,
