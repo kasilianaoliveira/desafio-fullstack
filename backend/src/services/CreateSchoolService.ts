@@ -30,16 +30,8 @@ export class CreateSchoolService {
 				}
 			})
 
-			if (!schoolAlreadyExists) {
-				throw new Error("School does not exist");
-			}
-
-			const existingPoint = await prismaClient.school.findFirst({
-				where: { id_escola }
-			});
-
-			if (existingPoint) {
-				throw new Error("School already has a point registered");
+			if (schoolAlreadyExists) {
+				throw new Error("Existing school");
 			}
 
 			const school = await prismaClient.school.create({
