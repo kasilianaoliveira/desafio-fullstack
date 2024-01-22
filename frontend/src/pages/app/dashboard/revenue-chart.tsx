@@ -25,7 +25,7 @@ interface props {
 }
 export const RevenueChart = ({ schools }: props) => {
   return (
-    <Card className="col-span-9 dark:border-gray-700 dark:bg-gray-900">
+    <Card className="col-span-9 bg-gray-300 dark:border-gray-700 dark:bg-gray-900">
       <CardHeader className="flex-row items-center justify-between pb-8">
         <div className="space-y-1">
           <CardTitle className="text-base font-medium">

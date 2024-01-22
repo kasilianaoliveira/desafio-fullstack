@@ -8,7 +8,7 @@ export const CardClassification = ({
   classification: string | undefined
 }) => {
   return (
-    <Card className="dark:border-gray-700 dark:bg-gray-900">
+    <Card className="bg-gray-300 dark:border-gray-700 dark:bg-gray-900">
       <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-base font-semibold">
           Classificação mais presente (INSE)
