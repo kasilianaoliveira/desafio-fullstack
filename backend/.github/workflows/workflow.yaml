@@ -1,9 +1,13 @@
 name: Continuos Integration
 
 on: [pull_request, push]
-jobs: 
-  continuos-integration: 
+jobs:
+  continuos-integration:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: backend
 
     steps:
       - uses: actions/checkout@v3
